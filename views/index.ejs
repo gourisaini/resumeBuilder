@@ -1,0 +1,19 @@
+<%- include("./partials/header")%>
+<main>
+  <section>
+    <div id="left">
+      <img alt="" src="/images/landing-image.png"/>
+    </div>
+    <div id="right">
+      <h1>Build a professional resume for free</h1>
+      <h4>Create your resume easily with our free builder and professional templates.</h4>
+      <button style="margin-left: 5vmax;">
+        <a href="<%=isLoggedIn?'/create':'/login'%>"  style="color: #fef6f3; padding: 1.6vmax 4vmax; font-weight: 600; font-size: medium;">CREATE RESUME</a>
+      </button>
+    </div>
+  </section>
+  <!-- <div>
+    <img src="https://www.myperfectresume.com/wp-content/uploads/2022/10/put-skill-in-practice.svg" alt="">
+  </div> -->
+</main>
+<%- include("./partials/footer")%>

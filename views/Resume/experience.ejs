@@ -1,0 +1,75 @@
+<%- include('../partials/header')%>
+
+  <div class="p-5 d-flex w-100" style="background-color: #fef6f3; height: 88vh;">
+    <div class="left w-25 mx-4 d-flex flex-column align-items-center  justify-content-center">
+      <h1 class="fs-2 text-center" style="color: #38686a;">Enter Experience</h1>
+      <form action="/add-ex/<%=user._id%>" class="education mt-5 container" method="POST">
+        <input class="form-control mb-3 w-100 m-auto border border-3 p-2" type="text" placeholder="Job Title/Position"
+          name="position">
+        <input class="form-control mb-3 w-100 m-auto border border-3 p-2" type="text" placeholder="Description"
+          name="description">
+        <input class="form-control mb-3 w-100 m-auto border border-3 p-2" type="number" placeholder="Duration"
+          name="duration">
+        <button class="btn btn-secondary mb-4 p-2" style="background-color: #38686a;">Add Experience</button>
+      </form>
+      <p>Empty sections will not appear on downloaded resume.</p>
+    </div>
+    <div class="right w-75 card-list d-flex">
+      <% user.experience.forEach((e, i)=> { %>
+        <div class="card">
+          <div class="card_title title-black">
+            <h5>-<%=e.position%>
+            </h5>
+            <h5>-<%=e.description%>
+            </h5>
+            <h5>-<%=e.duration%>
+            </h5>
+            <a href="/delete-ex/<%=i%>" type="button" class="btn btn-sm btn-danger">Remove</a>
+          </div>
+        </div>
+        <% })%>
+    </div>
+  </div>
+
+  <style>
+    .card-list{
+      flex-wrap: wrap;
+    }
+
+    .card .card_title {
+      padding: 2vmax;
+      border-radius: 0px 0px 40px 40px;
+      font-family: "Roboto" sans-serif;
+      font-size: 1vmax;
+    }
+
+    .card:hover {
+      transform: scale(0.9, 0.9);
+      box-shadow: 5px 5px 30px 15px rgba(0, 0, 0, 0.25),
+        -5px -5px 30px 15px rgba(0, 0, 0, 0.22);
+    }
+
+    .title-black {
+      color: black;
+    }
+
+    .card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin:1vmax;
+      width: 300px;
+      height: 300px;
+      border-radius: 40px;
+      background-image: url('https://i.pinimg.com/originals/6e/d2/f0/6ed2f08b5963aac343ed27d4abfdf12d.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-repeat: no-repeat;
+      box-shadow: 5px 5px 30px 7px rgba(0, 0, 0, 0.25), -5px -5px 30px 7px rgba(0, 0, 0, 0.22);
+      transition: 0.4s;
+      overflow: hidden;
+    }
+  </style>
+
+  <%- include('../partials/footer')%>

@@ -1,0 +1,36 @@
+<%- include("./partials/header")%>
+<link rel="stylesheet" href="/stylesheets/create.css">
+
+
+<div id="main">
+<h1>Create Resume</h1>
+<ul id="list">
+    <li style="--accent-color:#60c5a6">
+        <div class="icon"><i class="ri-profile-line"></i></div>
+        <div class="title"><a href="/basic/<%=user._id%>">Basic</a></div>
+        <div class="descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, impedit?</div>
+    </li>
+    <li style="--accent-color:#f20071">
+        <div class="icon"><i class="ri-book-open-line"></i></div>
+        <div class="title"><a href="/education/<%=user._id%>">Education</a></div>
+        <div class="descr">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+    </li>
+    <li style="--accent-color:#FCBA35">
+        <div class="icon"><i class="ri-team-line"></i></div>
+        <div class="title"><a href="/experience/<%=user._id%>">Experience</a></div>
+        <div class="descr">Lorem ipsum dolor sit.</div>
+    </li>
+    <li style="--accent-color:#DAE438">
+        <div class="icon"><i class="ri-macbook-line"></i></div>
+        <div class="title"><a href="/skill/<%=user._id%>">Skills</a></div>
+        <div class="descr">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor laboriosam odio alias.</div>
+    </li>
+    <li style="--accent-color:#994D7F">
+        <div class="icon"><i class="ri-slideshow-3-line"></i></div>
+        <div class="title"><a href="/project/<%=user._id%>">Project</a></div>
+        <div class="descr">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+    </li>
+</ul>
+</div>
+
+<%- include("./partials/footer")%>

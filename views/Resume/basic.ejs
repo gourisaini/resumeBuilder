@@ -1,0 +1,31 @@
+<%- include('../partials/header')%>
+
+  <div class="p-5 w-100 text-center" style="background: url(/images/one.jpg);  background-size: cover; background-position: center; background-repeat: no-repeat;">
+      <h1 class="fs-2 text-center" style="color: #38686a;">Enter Basic Details</h1>
+      <form action="/add-basic/<%=user._id%>" class="education mt-5 container" method="POST">
+        <textarea class="form-control mb-3 w-50 border border-3 p-2 m-auto" type="text" placeholder="Profile/Objective"
+          name="objective"></textarea>
+        <input class="form-control mb-3 w-50 border border-3 p-2 m-auto" type="text" placeholder="Address"
+          name="address">
+          <div class="d-flex w-50 m-auto">
+            <input class="form-control mb-3 w-50 border border-3 p-2 m-auto mx-1" type="number" placeholder="Contact"
+            name="phone">
+            <input class="form-control mb-3 w-50 border border-3 p-2 m-auto mx-1" type="date" placeholder="Date Of Birth"
+            name="dob">
+          </div>
+          <input class="form-control mb-3 w-50 border border-3 p-2 m-auto" type="text" placeholder="Language"
+          name="lang">
+          <input class="form-control mb-3 w-50 border border-3 p-2 m-auto" type="text" placeholder="hobbies"
+          name="hobby">
+          <input class="form-control mb-3 w-50 border border-3 p-2 m-auto" type="text" placeholder="LinkedIn"
+          name="linkedin">
+          <input class="form-control mb-3 w-50 border border-3 p-2 m-auto" type="text" placeholder="Github"
+          name="github">
+          <textarea class="form-control mb-3 w-50 border border-3 p-2 m-auto" type="text" placeholder="declaration"
+          name="declare"></textarea>
+        <button class="btn btn-secondary mb-4 p-2 w-50 m-auto" style="background-color: #38686a;">Add</button>
+      </form>
+      <p>Empty sections will not appear on downloaded resume.</p>
+    </div>
+
+  <%- include('../partials/footer')%>

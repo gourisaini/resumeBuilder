@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title><%=title%></title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body style="background-color: #fef6f3;">
+  <!-- style="background-image: linear-gradient(to top, #fef6f3 0%, #d1fdff  100%);" -->
+  <!-- <div class="container mt-5">
+    <h3 class="fw-light fs-3 alert alert-dark w-50">
+        Update your profile information
+    </h3>
+  
+    <div class="d-flex mb-3 w-75 p-5">
+        <div class="me-5">
+            <img
+                style="object-fit: cover"
+                class="rounded-circle profilePic"
+                height="100"
+                width="100"
+                src="assets/dummy.png"
+                alt=""
+            />
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <input class="d-none uploadImg" name="avatar" type="file" />
+                <button class="mt-3 btn btn-primary">Upload Image</button>
+            </form>
+        </div>
+        <div>
+            <h1 class="fs-1 fw-light">Gouri saini</h1>
+            <h3 class="fs-4 fw-light">gourisaini81@gmail.com</h3>
+            <p>
+                <small class="text-muted">
+                    <a
+                        class="text-decoration-none text-dark fs-3"
+                        href="<%= user.links.linkedin%>"
+                        ><i class="ri-linkedin-box-fill"></i
+                    ></a>
+  
+                    <a
+                        class="text-decoration-none text-dark fs-3 ms-3"
+                        href="<%= user.links.github%>"
+                        ><i class="ri-github-fill"></i
+                    ></a>
+                </small>
+            </p>
+        </div>
+    </div>
+  
+    <form action="/update/<%= user._id%>" method="POST">
+  
+      <input
+      class="mb-3 form-control w-75"
+      type="text"
+      placeholder="Name"
+      name="name"
+      value="<%= user.name%>"
+  />
+        <input
+            class="mb-3 form-control w-75"
+            type="text"
+            placeholder="username"
+            name="username"
+            value="<%= user.username%>"
+        />
+        <input
+            class="mb-3 form-control w-75"
+            type="email"
+            placeholder="email"
+            name="email"
+            value="<%= user.email%>"
+        />
+  
+    
+  
+        <label class="mb-3" for="">Links</label>
+        <input
+            class="mb-3 form-control w-75"
+            type="url"
+            placeholder="https://linkedin.com"
+            name="linkedin"
+            value="<%= user.links.linkedin%>"
+        />
+        <input
+            class="mb-3 form-control w-75"
+            type="url"
+            placeholder="https://github.com"
+            name="github"
+            value="<%= user.links.github%>"
+        />
+        <button class="btn btn-success">Update User Information</button>
+    </form>
+  </div> -->
+
+
+
+
+  <main class="container w-100 mt-5">
+    <h1 class="fs-1 fw-bold mb-5 m-auto mt-5 container" style="color: #f78542; font-family: Roboto;">Update User</h1>
+    <div id="img" class="container w-75 d-flex my-5 justify-content-center">
+      <div class="me-5 text-center">
+        <img
+            style="object-fit: cover"
+            class="profilePic"
+            height="100"
+            width="100"
+            src="/images/dummy.png"
+            alt=""
+        />
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <input class="d-none uploadImg" name="avatar" type="file" />
+            <button class="mt-3 btn btn-secondary" style="background-color: #f78542;">Upload Image</button>
+        </form>
+    </div>
+    <div>
+      <h1 class="fs-1 fw-light">Gouri saini</h1>
+      <h3 class="fs-4 fw-light">gourisaini81@gmail.com</h3>
+      <p>
+          <small class="text-muted">
+              <a
+                  class="text-decoration-none text-dark fs-3"
+                  href="<%= user.links.linkedin%>" style="color: #38686a;"
+                  ><i class="ri-linkedin-box-fill"></i
+              ></a>
+
+              <a
+                  class="text-decoration-none text-dark fs-3 ms-3"
+                  href="<%= user.links.github%>" style="color: #38686a;"
+                  ><i class="ri-github-fill"></i
+              ></a>
+          </small>
+      </p>
+  </div>
+    </div>
+    <hr>
+    <div>
+      <!-- <h1 class=" mb-3 text-center m-auto mt-5 container" style="color: #3F497F;">Edit Resume</h1> -->
+      <!-- <hr class="container"> -->
+      <form action="/update/<%= user._id%>" method="post">
+    <div class="container d-flex w-100">
+      <div class="left w-50"> 
+        <h3 class=" w-50 m-auto mb-3 mt-4 text-center" style="color: #f78542">Personal Details</h3>
+        <hr class="w-50 m-auto mb-3 ">
+    
+        <h4 class="fw-lighter w-75 m-auto mb-3 mt-4" style="text-align: left;">Basic Details</h4>
+        <hr class="w-75 m-auto mb-3"> 
+        <input class="form-control m-auto mb-4 w-75 p-2" type="text" placeholder="Fullname" name="name" value="<%=user.name%>">
+        <input class="form-control m-auto mb-4 w-75 p-2" type="text" placeholder="Address" name="address" value="<%=user.address%>">
+        <input class="form-control m-auto mb-4 w-75 p-2" type="number" placeholder="Mobile No." name="phone" value="<%=user.phone%>">
+        <!-- <input class="form-control m-auto mb-4 w-75 p-2" type="url" placeholder="Profile URL" name="profile" value="<%=user.profile%>"> -->
+        <input class="form-control m-auto mb-4 w-75 p-2" type="email" placeholder="Email" name="email" value="<%=user.email%>">
+        
+        <h4 class="fw-lighter w-75 m-auto mb-3 mt-5" style="text-align: left;">Personal Details</h4>
+        <hr class="w-75 m-auto mb-3"> 
+    
+        <input class="form-control m-auto mb-4 w-75 p-2" type="date" name="dob" placeholder="Date of Birth" value="<%=user.dob%>">
+        <input class="form-control m-auto mb-4 w-75 p-2" type="text" name="lang" placeholder="Languages" value="<%=user.lang%>">
+        <input class="form-control m-auto mb-4 w-75 p-2" type="text" name="hobby" placeholder="Hobbies" value="<%=user.hobby%>">
+        <input class="form-control m-auto mb-4 w-75 p-2" type="number" name="telephone" placeholder="Telephone No." value="<%=user.telephone%>">
+    
+
+        <h4 class="fw-lighter w-75 m-auto mb-3 mt-4" style="text-align: left;">Links</h4>
+        <hr class="w-75 m-auto mb-3"> 
+        <input class="form-control m-auto mb-4 w-75 p-2" type="text" placeholder="Github" name="github" value="<%=user.github%>">
+        <input class="form-control m-auto mb-4 w-75 p-2" type="text" name="linkedin" placeholder="LinkedIn" value="<%=user.linkedin%>">
+         </div>
+     
+        <div class="right w-50 " style="border-left: 0.5px solid #f78542;">
+    
+          <h3 class=" w-50 m-auto mb-3 mt-4 text-center" style="color: #f78542">Professional Details</h3>
+          <hr class="w-50 m-auto mb-3 ">
+    
+          <h4 class="fw-lighter w-75 m-auto mb-3 mt-4" style="text-align: left;">Objective</h4>
+          <hr class="w-75 m-auto mb-3"> 
+          <textarea class="form-control m-auto mb-4 w-75 p-2" name="objective" placeholder="Objective"><%=user.objective%></textarea>
+     
+     
+    
+       <h4 class="fw-lighter w-75 m-auto mb-3 mt-5" style="text-align: left;">Skills & Abilities</h4>
+       <hr class="w-75 m-auto mb-3"> 
+       <textarea class="form-control m-auto mb-4 w-75 p-2" name="computer" placeholder="Computer Skills"><%=user.computer%></textarea>
+       <textarea class="form-control m-auto mb-4 w-75 p-2" name="personal" placeholder="Personal Skills"><%=user.personal%></textarea>
+<!--     
+       <h4 class="fw-lighter w-75 m-auto mb-3 mt-5" style="text-align: left;">Work Experience</h4>
+       <hr class="w-75 m-auto mb-3">
+    
+       <textarea class="form-control m-auto mb-4 w-75 p-2" name="work" placeholder="Work Experience"><%=user.work%></textarea>
+    
+       <h4 class="fw-lighter w-75 m-auto mb-3 mt-5" style="text-align: left;">Education</h4>
+       <hr class="w-75 m-auto mb-3"> 
+    
+       <h5 class="fw-lighter w-75 m-auto mb-3 mt-5" style="text-align: left;">Details</h5>
+       <input class="form-control m-auto mb-4 w-75 p-2" type="text" name="degree" placeholder="Degree" value="<%=user.degree%>">
+       <input class="form-control m-auto mb-4 w-75 p-2" type="text" name="college" placeholder="College" value="<%=user.college%>">
+       <input class="form-control m-auto mb-4 w-75 p-2" type="text" name="year" placeholder="Passing Year" value="<%=user.year%>"> -->
+
+
+       <div class="container w-100" id="we">
+        <!-- <h2 class="fs-title fw-lighter mb-3 fs-6" style="color: #38686a;">Work Experience</h2> -->
+        <h4 class="fw-lighter w-75 m-auto mb-3 mt-5" style="text-align: left;">Work Experience</h4>
+        <hr class="w-75 m-auto mb-3">
+       <textarea class="form-control m-auto mb-4 w-75 p-2" name="work" placeholder="Work Experience"></textarea>
+       <div class="container text-center" id="AddField">
+        <a onclick="AddNewField();" class="btn btn-dark btn-sm">Add</a>
+      </div>
+    </div>
+    
+      <div class="container w-100" id="edu">
+        <!-- <h2 class="fs-title fw-lighter mb-3 fs-6" style="color: #38686a;">Education</h2> -->
+        <h4 class="fw-lighter w-75 m-auto mb-3 mt-5" style="text-align: left;">Education</h4>
+        <hr class="w-75 m-auto mb-3"> 
+  
+        <!-- <h5 class="fw-lighter w-75 m-auto mb-3 mt-5" style="text-align: left;">College details</h5> -->
+        <div class="m-auto"> 
+          <h6>Details-</h6>
+            <input class="form-control m-auto mb-4 w-75 p-2" type="text" name="degree" placeholder="Degree">
+            <input class="form-control m-auto mb-4 w-75 p-2" type="text" name="college" placeholder="College">
+            <input class="form-control m-auto mb-4 w-75 p-2" type="text" name="year" placeholder="Passing Year">   
+          </div>
+        <!-- <h5 class="fw-lighter w-75 m-auto mb-3 mt-5" style="text-align: left;">12th details</h5>
+        <input class="form-control m-auto mb-4 w-75 p-2" type="text" name="board12" placeholder="Board">
+        <input class="form-control m-auto mb-4 w-75 p-2" type="text" name="school12" placeholder="School">
+        <input class="form-control m-auto mb-4 w-75 p-2" type="text" name="year12" placeholder="Passing Year">
+        <h5 class="fw-lighter w-75 m-auto mb-3 mt-5" style="text-align: left;">10th details</h5>
+        <input class="form-control m-auto mb-4 w-75 p-2" type="text" name="board10" placeholder="Board">
+        <input class="form-control m-auto mb-4 w-75 p-2" type="text" name="school10" placeholder="School">
+        <input class="form-control m-auto mb-4 w-75 p-2" type="text" name="year10" placeholder="Passing Year"> -->
+  
+        <div class="container text-center" id="AddEField">
+          <a onclick="AddEduField();" class="btn btn-dark btn-sm">Add</a>
+        </div>
+     
+      </div>
+<!--     
+       
+       <h5 class="fw-lighter w-75 m-auto mb-3 mt-5" style="text-align: left;">12th details</h5>
+       <input class="form-control m-auto mb-4 w-75 p-2" type="text" name="board12" placeholder="Board" value="<%=user.board12%>">
+       <input class="form-control m-auto mb-4 w-75 p-2" type="text" name="school12" placeholder="School" value="<%=user.school12%>">
+       <input class="form-control m-auto mb-4 w-75 p-2" type="text" name="year12" placeholder="Passing Year" value="<%=user.year12%>">
+    
+    
+       
+       <h5 class="fw-lighter w-75 m-auto mb-3 mt-5" style="text-align: left;">10th details</h5>
+       <input class="form-control m-auto mb-4 w-75 p-2" type="text" name="board10" placeholder="Board" value="<%=user.board10%>">
+       <input class="form-control m-auto mb-4 w-75 p-2" type="text" name="school10" placeholder="School" value="<%=user.school10%>">
+       <input class="form-control m-auto mb-4 w-75 p-2" type="text" name="year10" placeholder="Passing Year" value="<%=user.year10%>"> -->
+    
+      
+    
+       <h4 class="fw-lighter w-75 m-auto mb-3 mt-5" style="text-align: left;">Declaration</h4>
+       <hr class="w-75 m-auto mb-3"> 
+    
+       <textarea class="form-control m-auto mb-4 w-75 p-2" name="declare" placeholder="Declaration"><%=user.declare%></textarea>
+        </div>
+    
+    </div>
+    <p class="w-100 text-center"><button class="btn btn-secondary w-25 mb-4 p-2 m-auto mt-5" style="background-color: #f78542;">Update</button></p>
+          
+      </form>
+    </div>
+  </main>
+
+  <style>
+    button:hover{
+	box-shadow: 0 0 0 2px white, 0 0 0 3px #f78542;
+}
+  </style>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</script><script  src="/javascripts/update.js"></script>
+
+</body>
+</html>

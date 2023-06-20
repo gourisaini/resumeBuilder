@@ -1,0 +1,32 @@
+{
+    "education": [
+        {
+            "degree": "",
+            "college": "",
+            "year": ""
+        }
+    ],
+    "skills": [{
+        "computer":"",
+        "personal":""
+    }],
+    "project": [
+        {
+            "title": "",
+            "description": "",
+            "technology": "",
+            "link": ""
+        }
+    ],
+    "experience": [
+        {
+            "experience":""
+        }
+    ],
+    "interest": [{
+        "dob":"",
+        "lang":"",
+        "hobby":"",
+        "telephone":""
+    }]
+}
